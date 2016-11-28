@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-  
+
   <style>
   .topright {
     position: absolute;
@@ -51,6 +51,8 @@
   <!-- clipboardjs -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
 
+  <link rel="stylesheet" href="css/main.css">
+
   <title>Koulutusluokitus</title>
 </head>
 <body>
@@ -62,36 +64,36 @@
         <div class="col-xs-2" data-ng-if="reallyshowkoodi">
           <h5>Koulutuskoodi</h5>
           <span data-ng-repeat="s in sarakkeet | filter:{ ryhma:'perus' }" data-ng-click="useSarakkeet(s)">
-            <button data-ng-if="s.nayta" class="btn btn-xs btn-primary">{{s.selite}}</button>
-            <button data-ng-if="!s.nayta" class="btn btn-xs btn-default">{{s.selite}}</button>
+            <button data-ng-if="s.nayta" class="btn btn-xs rapida-btn-primary">{{s.selite}}</button>
+            <button data-ng-if="!s.nayta" class="btn btn-xs rapida-btn-default">{{s.selite}}</button>
           </span>
         </div>
         <div class="col-xs-2">
           <h5>Opetushallinnon koulutusluokitus 1995</h5>
           <div data-ng-repeat="s in sarakkeet | filter:{ ryhma:'1995' }" data-ng-click="useSarakkeet(s)" data-ng-if="!s.koodi || (s.koodi && showkoodi)">
-            <button data-ng-if="s.nayta" class="btn btn-xs btn-primary">{{s.selite}}</button>
-            <button data-ng-if="!s.nayta" class="btn btn-xs btn-default">{{s.selite}}</button>
+            <button data-ng-if="s.nayta" class="btn btn-xs rapida-btn-primary">{{s.selite}}</button>
+            <button data-ng-if="!s.nayta" class="btn btn-xs rapida-btn-default">{{s.selite}}</button>
           </div>
         </div>
         <div class="col-xs-2">
           <h5>Opetushallinnon koulutusluokitus 2002</h5>
           <div data-ng-repeat="s in sarakkeet | filter:{ ryhma:'2002' }" data-ng-click="useSarakkeet(s)" data-ng-if="!s.koodi || (s.koodi && showkoodi)">
-            <button data-ng-if="s.nayta" class="btn btn-xs btn-primary">{{s.selite}}</button>
-            <button data-ng-if="!s.nayta" class="btn btn-xs btn-default">{{s.selite}}</button>
+            <button data-ng-if="s.nayta" class="btn btn-xs rapida-btn-primary">{{s.selite}}</button>
+            <button data-ng-if="!s.nayta" class="btn btn-xs rapida-btn-default">{{s.selite}}</button>
           </div>
         </div>
         <div class="col-xs-2">
           <h5>Kansallinen koulutusluokitus 2016</h5>
           <div data-ng-repeat="s in sarakkeet | filter:{ ryhma:'2016' }" data-ng-click="useSarakkeet(s)" data-ng-if="!s.koodi || (s.koodi && showkoodi)">
-            <button data-ng-if="s.nayta" class="btn btn-xs btn-primary">{{s.selite}}</button>
-            <button data-ng-if="!s.nayta" class="btn btn-xs btn-default">{{s.selite}}</button>
+            <button data-ng-if="s.nayta" class="btn btn-xs rapida-btn-primary">{{s.selite}}</button>
+            <button data-ng-if="!s.nayta" class="btn btn-xs rapida-btn-default">{{s.selite}}</button>
           </div>
         </div>
         <div class="col-xs-2">
           <h5>Muut</h5>
           <div data-ng-repeat="s in sarakkeet | filter:{ ryhma:'muut' }" data-ng-click="useSarakkeet(s)" data-ng-if="!s.koodi || (s.koodi && showkoodi)">
-            <button data-ng-if="s.nayta" class="btn btn-xs btn-primary">{{s.selite}}</button>
-            <button data-ng-if="!s.nayta" class="btn btn-xs btn-default">{{s.selite}}</button>
+            <button data-ng-if="s.nayta" class="btn btn-xs rapida-btn-primary">{{s.selite}}</button>
+            <button data-ng-if="!s.nayta" class="btn btn-xs rapida-btn-default">{{s.selite}}</button>
           </div>
         </div>
         <div class="col-xs-2">
@@ -108,17 +110,17 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="hidden-xs col-xs-1" id="copyon">
-        <button class="clip" data-clipboard-target="#copyarea"
+        <button class="clip rapida-clip" data-clipboard-target="#copyarea"
           data-popover-trigger="'mouseenter'" data-popover-placement="right" data-uib-popover="Kopioi taulukko leikepöydälle"
-          data-tooltip-trigger="'focus'" data-tooltip-placement="top" data-uib-tooltip="Kopioitu!"
+          data-popover-class="rapida-clip" data-tooltip-trigger="'focus'" data-tooltip-placement="top" data-uib-tooltip="Kopioitu!"
           data-ng-click="clipcopy=true" data-ng-mouseleave="clipcopy=false">
           <span class="glyphicon glyphicon-copy"></span>
         </button>
       </div>
       <div class="col-xs-11">
         <input type="text" id="copyuri" value="{{baseuri}}{{query||toURIParam(search)?'?':''}}{{query}}{{toURIParam(search)}}" class="col-xs-9 col-lg-8">
-        <button class="clip" data-clipboard-target="#copyuri"
-          data-popover-trigger="'mouseenter'" data-popover-placement="right" data-uib-popover="Kopioi URI"
+        <button class="clip rapida-clip" data-clipboard-target="#copyuri"
+          data-popover-trigger="'mouseenter'" data-popover-placement="right" data-uib-popover="Kopioi URI" data-popover-class="rapida-clip"
           data-tooltip-trigger="'focus'" data-tooltip-placement="top" data-uib-tooltip="Kopioitu!" data-tooltip-popup-close-delay="900">
           <span class="glyphicon glyphicon-copy"></span>
         </button>
@@ -127,7 +129,7 @@
       <!-- ei uutta row:ta, tai edes col:ia jotta taulukko on sisaruksena kopiointipainikkeelle! uusi div tiputtaa uudeksi riviksi -->
       <table width="96%" class="table table-striped table-condensed" id="copyarea">
       <thead>
-        <tr style="background-color:lightblue;">
+        <tr class="rapida-light">
           <th data-ng-hide="clipcopy"><span style="font-size:xx-small;">#</span></th>
           <th data-ng-repeat="s in sarakkeet | filter:{nayta:1}" data-ng-click="$parent.koodiOrderReverse=!($parent.koodiOrder==s.a?$parent.koodiOrderReverse:true); $parent.koodiOrder=s.a">
           {{s.selite}}
@@ -135,15 +137,17 @@
           <span class="fa fa-sort-up" data-ng-if="$parent.koodiOrder==s.a && ($parent.koodiOrderReverse)"></span>
           </th>
         </tr>
-        <tr style="background-color:lightblue;" data-ng-hide="clipcopy">
+        <tr class="rapida-light" data-ng-hide="clipcopy">
           <td data-ng-hide="clipcopy"></td>
-          <td data-ng-repeat="s in sarakkeet | filter:{nayta:1}"><input type="text" class="form-control input-sm" style="background-color:#eeeeff;" data-ng-model="$parent.search[s.a]"></td>
+          <td data-ng-repeat="s in sarakkeet | filter:{nayta:1}">
+            <input type="text" class="form-control input-sm rapida-dim" data-ng-model="$parent.search[s.a]">
+          </td>
         </tr>
       </thead>
       <tbody>
         <!-- UNIQUE/DISTINCT/GROUPBY TÄHÄN JOTENKIN -->
         <tr data-ng-repeat="o in koodit | filter:search | orderBy:koodiOrder:koodiOrderReverse">
-          <td data-ng-hide="clipcopy" style="background-color:#eeeeee;"><span style="font-size:xx-small;">{{$index+1}}</span></td>
+          <td data-ng-hide="clipcopy" class="rapida-light"><span class="rapida-xx-small">{{$index+1}}</span></td>
           <td data-ng-repeat="s in sarakkeet | filter:{nayta:1}">{{o[s.a]}}</td>
         </tr>
       </tbody>
@@ -151,252 +155,16 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-1"></div>
-    <div class="col-xs-10 text-center"><hr></div>
-    <div class="col-xs-1"></div>
-  </div>
-  <div class="row">
     <div class="col-xs-4 text-left"></div>
     <div class="col-xs-4 text-center">
-      <span style="font-family:arial; color:#757575;">&copy; 2016</span>
+      <span class="rapida-text-dim">&copy; 2016</span>
     </div>
     <div class="col-xs-4 text-right"></div>
   </div>
-<script>
-  var clipboard = new Clipboard('.clip');
-  clipboard.on('success', function(e) {
-    e.clearSelection();
-  });
-  clipboard.on('error', function(e) {
-    console.log(e);
-  });
-</script>
-<script>
-  // Credits: http://stackoverflow.com/a/7075589
-  function findItem(arr, propName, propValue) {
-    //console.debug("findItem "+propName+" "+propValue)
-    for (var i=0; i < arr.length; i++) {
-      //console.debug("findItem arr for "+i+" "+arr[i][propName]+"=="+propValue)
-      if (arr[i][propName] == propValue) {
-        return arr[i];
-      }
-    }
-    // will return undefined if not found; you could return a default instead
-  }
-  // Credits: http://stackoverflow.com/a/979995
-  var QueryString = function () {
-    //console.debug("QueryString")
-    // This function is anonymous, is executed immediately and 
-    // the return value is assigned to QueryString!
-    var query_string = {};
-    var query = window.location.search.substring(1);
-    var vars = query.split("&");
-    for (var i=0;i<vars.length;i++) {
-      var pair = vars[i].split("=");
-          // If first entry with this name
-      if (typeof query_string[pair[0]] === "undefined") {
-        query_string[pair[0]] = decodeURIComponent(pair[1]);
-          // If second entry with this name
-      } else if (typeof query_string[pair[0]] === "string") {
-        var arr = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
-        query_string[pair[0]] = arr;
-          // If third or later entry with this name
-      } else {
-        query_string[pair[0]].push(decodeURIComponent(pair[1]));
-      }
-    } 
-    return query_string;
-  }();
-</script>
-<script>
-var koodiApp = angular.module('koodiApp', ['ngRoute', 'ui.select', 'ui.bootstrap']);
-koodiApp.controller('koodiController', function($scope,$http)
-{
-  //
-  // PRIVAATIT FUNKTIOT
-  //
-  
-  //
-  // SCOPE
-  //
-  
-  // oma versio unique:sta
-  // ks: http://stackoverflow.com/questions/15914658/how-to-make-ng-repeat-filter-out-duplicate-results
-  //     https://github.com/angular-ui/angular-ui-OLDREPO/blob/master/modules/filters/unique/unique.js
-  $scope.uniikit = function () {
-    // katsotaan ensin onko koodi tai nimi sarake mukana, jolloin kaikki rivit mukaan
-    for(var c=0; c<$scope.sarakkeet.length; c++){
-      var col = $scope.sarakkeet[c];
-      if(col.a=="koodi" || col.a=="nimi") {
-        if (col.nayta==1) {
-          return $scope.luokitus;
-        }
-      }
-    }
-    var loopi = 0;
-    var newItems = [];
 
-    // tehdään ensin luokituksesta kopio items, jossa on sitten vain valitut sarakkeet
-    var items = [];
-    // tehdään valn valituilla sarakkeilla varustettu objekti, jotta equals toimii
-    for(var i=0; i<$scope.luokitus.length; i++){
-      var item = $scope.luokitus[i];
-      var newItem = {};
-      for(var c=0; c<$scope.sarakkeet.length; c++){
-        var col = $scope.sarakkeet[c];
-        loopi++;
-        if (col.nayta==1) {
-          newItem[col.a] = item[col.a];
-        }
-      }
-      items.push(newItem);
-    }
-    // populoidaan newItems, jossa uniikit kappaleet
-    if (angular.isArray(items)) {
-      // ja nyt käytetään karsittua objektia
-      for(var i=0; i<items.length; i++){
-        var item = items[i];
-        if(item["koodi"] || item["nimi"]) {
-          return items;
-        }
-        var hasContent = false;
-        // varmista ettei kaikki ole tyhjää
-        angular.forEach(item, function(iobj) {
-          if (iobj) {
-            hasContent = true;
-          }
-        });
-        if (hasContent) {
-          var isDuplicate = false;
-          for (var n=0; n<newItems.length; n++) {
-            loopi++;
-            if (angular.equals(newItems[n], item)) {
-              isDuplicate = true;
-              break;
-            }
-          }
-          if (!isDuplicate) {
-            newItems.push(item);
-          }
-        }
-      }
-    }
-    return newItems;
-  }
-  
-  $scope.useSarakkeet = function(s) {
-    //console.debug("useSarakkeet")
-    s.nayta=(s.nayta?0:1);
-    $scope.koodit = $scope.uniikit();
-    var ret = Object.values($scope.sarakkeet).map(function(k){
-      if (k.nayta) {
-        return "sarake="+k.selite;
-      }
-    })
-    .filter(function(n){ return n != undefined })
-    .join('&');
-    $scope.query = ret;
-  }
-  
-  $scope.toURIParam = function(data) {
-    console.debug("toURIParam")
-    if (!data) return "";
-    var ret = Object.keys(data).map(function(k){
-      if (!data[k]) {return "";}
-      return encodeURIComponent(findItem($scope.sarakkeet,"a",k).selite)+"="+encodeURIComponent(data[k]);
-    }).join('&');
-    if (ret) ret="&"+ret;
-    return ret;
-  }
-  
-  //
-  // ASETUKSET & ALUSTUS
-  //
+  <script src="js/koulutusluokitus.js"></script>
+  <script src="js/koulutusluokitus.controller.js"></script>
 
-  $scope.sarakkeet = [
-    {"a":"koodi","selite":"Koodi","nayta":1,"ryhma":"perus","koodi":1}
-    ,{"a":"nimi","selite":"Nimi","nayta":1,"ryhma":"perus","koodi":0}
-    ,{"a":"alkupvm","selite":"Alkupvm","nayta":0,"ryhma":"muut","koodi":0}
-    ,{"a":"loppupvm","selite":"Loppupvm","nayta":0,"ryhma":"muut","koodi":0}
-    ,{"a":"koulutusaste2002koodi","selite":"opmast","nayta":0,"ryhma":"2002","koodi":1}
-    ,{"a":"koulutusaste2002nimi","selite":"Koulutusaste 2002","nayta":0,"ryhma":"2002","koodi":0}
-    ,{"a":"koulutusala2002koodi","selite":"opmala","nayta":0,"ryhma":"2002","koodi":1}
-    ,{"a":"koulutusala2002nimi","selite":"Koulutusala 2002","nayta":1,"ryhma":"2002","koodi":0}
-    ,{"a":"opintoala2002koodi","selite":"opmopa","nayta":0,"ryhma":"2002","koodi":1}
-    ,{"a":"opintoala2002nimi","selite":"Opintoala 2002","nayta":0,"ryhma":"2002","koodi":0}
-    ,{"a":"koulutusaste1995koodi","selite":"opm95ast","nayta":0,"ryhma":"1995","koodi":1}
-    ,{"a":"koulutusaste1995nimi","selite":"Koulutusaste 1995","nayta":0,"ryhma":"1995","koodi":0}
-    ,{"a":"koulutusala1995koodi","selite":"opm95ala","nayta":0,"ryhma":"1995","koodi":1}
-    ,{"a":"koulutusala1995nimi","selite":"Koulutusala 1995","nayta":0,"ryhma":"1995","koodi":0}
-    ,{"a":"opintoala1995koodi","selite":"opm95opa","nayta":0,"ryhma":"1995","koodi":1}
-    ,{"a":"opintoala1995nimi","selite":"Opintoala 1995","nayta":1,"ryhma":"1995","koodi":0}
-    ,{"a":"tutkintokoodi","selite":"tutk","nayta":0,"ryhma":"muut","koodi":1}
-    ,{"a":"tutkintonimi","selite":"Tutkinto","nayta":0,"ryhma":"muut","koodi":0}
-    ,{"a":"tutkintotyyppikoodi","selite":"tutktyyp","nayta":0,"ryhma":"muut","koodi":1}
-    ,{"a":"tutkintotyyppinimi","selite":"Tutkintotyyppi","nayta":0,"ryhma":"muut","koodi":0}
-    ,{"a":"koulutustyyppikoodi","selite":"koultyyp","nayta":0,"ryhma":"muut","koodi":1}
-    ,{"a":"koulutustyyppinimi","selite":"Koulutustyyppi","nayta":0,"ryhma":"muut","koodi":0}
-    ,{"a":"isced2011koulutusastekoodi","selite":"isced2011koulutusaste","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"isced2011koulutusastenimi","selite":"Koulutusaste","nayta":0,"ryhma":"2016","koodi":0}
-    ,{"a":"isced2011koulutusastetaso1koodi","selite":"isced2011koulutusastetaso1","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"isced2011koulutusastetaso1nimi","selite":"Koulutusaste (taso1)","nayta":0,"ryhma":"2016","koodi":0}
-    ,{"a":"isced2011koulutusastetaso2koodi","selite":"isced2011koulutusastetaso2","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"isced2011koulutusastetaso2nimi","selite":"Koulutusaste (taso2)","nayta":0,"ryhma":"2016","koodi":0}
-    ,{"a":"isced2011koulutusalataso1koodi","selite":"isced2011koulutusalataso1","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"isced2011koulutusalataso1nimi","selite":"Koulutusala (taso1)","nayta":0,"ryhma":"2016","koodi":0}
-    ,{"a":"isced2011koulutusalataso2koodi","selite":"isced2011koulutusalataso2","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"isced2011koulutusalataso2nimi","selite":"Koulutusala (taso2)","nayta":0,"ryhma":"2016","koodi":0}
-    ,{"a":"isced2011koulutusalataso3koodi","selite":"isced2011koulutusalataso3","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"isced2011koulutusalataso3nimi","selite":"Koulutusala (taso3)","nayta":0,"ryhma":"2016","koodi":0}
-    ,{"a":"okmohjauksenalakoodi","selite":"okmohjauksenala","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"okmohjauksenalanimi","selite":"OKM ohjauksen ala","nayta":1,"ryhma":"2016","koodi":0}
-  ];
-  
-  $scope.baseuri = location.origin+location.pathname;
-  $scope.query = "";
-  
-  $scope.koodit = [];
-  $scope.luokitus = [];
-  $scope.koodistoLataa = true;
-  $scope.koodiOrder = 'koodi';
-  $scope.koodiOrderReverse = false;
-
-  $scope.koodistokoodilkm = 0;
-  $http.get("http://dwitvipuetl.csc.fi/api/json/koulutusluokitus")
-  .then(function (response){
-    $scope.luokitus = response.data;
-    $scope.koodit = $scope.uniikit();
-    $scope.koodistoLataa = false;
-  });
-  
-  $scope.search = {};
-  
-  $scope.sarakkeet.forEach(function(e,i,arr) {
-    if (QueryString[e.selite]) {
-      $scope.search[e.a] = QueryString[e.selite];
-    }
-  });
-  
-  if (QueryString.sarake) {
-    $scope.sarakkeet.forEach(function(e,i,arr) {
-      e.nayta=0;
-    });
-    var sArr = [];
-    if (angular.isArray(QueryString.sarake)) {
-      sArr = QueryString.sarake;
-    } else {
-      if (QueryString.sarake.indexOf(",")>=0) {
-        sArr = QueryString.sarake.split(",");
-      } else {
-        sArr.push(QueryString.sarake);
-      }
-    }
-    angular.forEach(sArr, function(sobj,skey) {
-      $scope.useSarakkeet(findItem($scope.sarakkeet,"selite",sobj));
-    });
-  }
-});//-koodiController
-</script>
 </div><!-- /controller & /koodiApp -->
 </body>
 </html>

@@ -1,0 +1,63 @@
+body {
+  background-color: rgba(33,60,70,1);
+  color: rgba(202,202,222,1);
+}
+
+input {
+  background-color: rgba(33,60,70,1);
+  color: rgba(202,202,202,1);
+}
+
+
+.table-striped > tbody > tr:nth-child(2n) > td,
+.table-striped > tbody > tr:nth-child(2n) > th {
+  background-color: rgba(33,60,70,1);
+  color: rgba(222,222,232,1);
+}
+.table-striped > tbody > tr:nth-child(2n+1) > td,
+.table-striped > tbody > tr:nth-child(2n+1) > th {
+  background-color: rgba(49,76,86,1);
+}
+
+.rapida-btn-primary {
+  background-color: rgba(2,118,143,1);
+  color: rgba(242,242,242,1);
+}
+.rapida-btn-default {
+  background-color: rgba(33,60,70,1);
+  color: rgba(202,202,202,1);
+}
+
+.rapida-light > td,
+.rapida-light {
+  background-color: rgba(2,118,143,1);
+  color: rgba(222,222,242,1);
+}
+
+.rapida-light-dim {
+  background-color: rgba(20,136,161,1);
+  color: rgba(202,202,202,1);
+}
+
+.rapida-xx-small {
+  font-size: xx-small;
+}
+
+.rapida-dim {
+  background-color: rgba(33,60,70,1);
+  color: rgba(202,202,202,1);
+/*
+  background-color: rgba(20,136,169,1);
+  color: rgba(202,202,202,1);
+*/
+}
+
+.rapida-clip {
+  background-color: white;
+  color: black;
+}
+
+.rapida-text-dim {
+  font-family: arial;
+  color: #757575;
+}
