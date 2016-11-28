@@ -151,8 +151,8 @@ koodiApp.controller('koodiController', function($scope,$http)
   $scope.koodiOrderReverse = false;
 
   $scope.koodistokoodilkm = 0;
-  //$http.get("http://dwitvipuetl.csc.fi/api/json/koulutusluokitus")
-  $http.get("/koulutusluokitus.json")
+  $http.get("http://dwitvipuetl.csc.fi/api/json/koulutusluokitus")
+  //$http.get("/koulutusluokitus.json")
   .then(function (response){
     $scope.luokitus = response.data;
     $scope.koodit = $scope.uniikit();
