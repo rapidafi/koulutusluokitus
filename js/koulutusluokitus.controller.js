@@ -151,8 +151,12 @@ koodiApp.controller('koodiController', function($scope,$http)
   $scope.koodiOrderReverse = false;
 
   $scope.koodistokoodilkm = 0;
-  $http.get("/api/json/koulutusluokitus")
-  //$http.get("/koulutusluokitus.json")
+  
+  geturi = "/api/json/koulutusluokitus"
+  if (location.hostname=='127.0.0.1' || location.hostname=='localhost') {
+    geturi="/koulutusluokitus.json"
+  }
+  $http.get(geturi)
   .then(function (response){
     $scope.luokitus = response.data;
     $scope.koodit = $scope.uniikit();
