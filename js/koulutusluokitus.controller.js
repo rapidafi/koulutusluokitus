@@ -110,7 +110,7 @@ koodiApp.controller('koodiController', function($scope,$http)
     ,{"a":"koulutusaste2002koodi","selite":"opmast","nayta":0,"ryhma":"2002","koodi":1}
     ,{"a":"koulutusaste2002nimi","selite":"Koulutusaste 2002","nayta":0,"ryhma":"2002","koodi":0}
     ,{"a":"koulutusala2002koodi","selite":"opmala","nayta":0,"ryhma":"2002","koodi":1}
-    ,{"a":"koulutusala2002nimi","selite":"Koulutusala 2002","nayta":1,"ryhma":"2002","koodi":0}
+    ,{"a":"koulutusala2002nimi","selite":"Koulutusala 2002","nayta":0,"ryhma":"2002","koodi":0}
     ,{"a":"opintoala2002koodi","selite":"opmopa","nayta":0,"ryhma":"2002","koodi":1}
     ,{"a":"opintoala2002nimi","selite":"Opintoala 2002","nayta":0,"ryhma":"2002","koodi":0}
     ,{"a":"koulutusaste1995koodi","selite":"opm95ast","nayta":0,"ryhma":"1995","koodi":1}
@@ -118,13 +118,13 @@ koodiApp.controller('koodiController', function($scope,$http)
     ,{"a":"koulutusala1995koodi","selite":"opm95ala","nayta":0,"ryhma":"1995","koodi":1}
     ,{"a":"koulutusala1995nimi","selite":"Koulutusala 1995","nayta":0,"ryhma":"1995","koodi":0}
     ,{"a":"opintoala1995koodi","selite":"opm95opa","nayta":0,"ryhma":"1995","koodi":1}
-    ,{"a":"opintoala1995nimi","selite":"Opintoala 1995","nayta":1,"ryhma":"1995","koodi":0}
+    ,{"a":"opintoala1995nimi","selite":"Opintoala 1995","nayta":0,"ryhma":"1995","koodi":0}
     ,{"a":"tutkintokoodi","selite":"tutk","nayta":0,"ryhma":"muut","koodi":1}
     ,{"a":"tutkintonimi","selite":"Tutkinto","nayta":0,"ryhma":"muut","koodi":0}
     ,{"a":"tutkintotyyppikoodi","selite":"tutktyyp","nayta":0,"ryhma":"muut","koodi":1}
-    ,{"a":"tutkintotyyppinimi","selite":"Tutkintotyyppi","nayta":0,"ryhma":"muut","koodi":0}
+    ,{"a":"tutkintotyyppinimi","selite":"Tutkintotyyppi","nayta":1,"ryhma":"muut","koodi":0}
     ,{"a":"koulutustyyppikoodi","selite":"koultyyp","nayta":0,"ryhma":"muut","koodi":1}
-    ,{"a":"koulutustyyppinimi","selite":"Koulutustyyppi","nayta":0,"ryhma":"muut","koodi":0}
+    ,{"a":"koulutustyyppinimi","selite":"Koulutustyyppi","nayta":1,"ryhma":"muut","koodi":0}
     ,{"a":"isced2011koulutusastekoodi","selite":"isced2011koulutusaste","nayta":0,"ryhma":"2016","koodi":1}
     ,{"a":"isced2011koulutusastenimi","selite":"Koulutusaste","nayta":0,"ryhma":"2016","koodi":0}
     ,{"a":"isced2011koulutusastetaso1koodi","selite":"isced2011koulutusastetaso1","nayta":0,"ryhma":"2016","koodi":1}
@@ -138,7 +138,7 @@ koodiApp.controller('koodiController', function($scope,$http)
     ,{"a":"isced2011koulutusalataso3koodi","selite":"isced2011koulutusalataso3","nayta":0,"ryhma":"2016","koodi":1}
     ,{"a":"isced2011koulutusalataso3nimi","selite":"Koulutusala (taso3)","nayta":0,"ryhma":"2016","koodi":0}
     ,{"a":"okmohjauksenalakoodi","selite":"okmohjauksenala","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"okmohjauksenalanimi","selite":"OKM ohjauksen ala","nayta":1,"ryhma":"2016","koodi":0}
+    ,{"a":"okmohjauksenalanimi","selite":"OKM ohjauksen ala","nayta":0,"ryhma":"2016","koodi":0}
   ];
 
   $scope.baseuri = location.origin+location.pathname;
