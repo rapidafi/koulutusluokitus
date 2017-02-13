@@ -194,15 +194,29 @@ koodiApp.controller('koodiController', function($scope,$http)
 koodiApp.filter('regex', function() {
   return function(input, regex) {
     //console.debug(regex)
-    field=Object.keys(regex)[0]||'koodi'
-    regex=Object.values(regex)[0]
-    //console.log('regex '+field+' '+regex)
-    var patt = new RegExp(regex,'i');
-    var out = [];
-    for (var i = 0; i < input.length; i++){
-      //console.debug(input[i])
-      if(field){
-        if(patt.test(input[i][field])){
+    let fields = Object.keys(regex);
+    let values = Object.values(regex);
+    for(let v=0; v<Object.values(regex).length; v++){//take out empty rules
+      if(!values[v]){
+        fields.splice(v,1);
+        values.splice(v,1);
+      }
+    }
+    let out = [];
+    if(fields.length==0){//nothing to rule out..
+      out=input;//..so all
+    }else{
+      for(let i=0; i<input.length; i++){
+        let addit=true;//see if all patterns give ok
+        for(let f=0; f<fields.length; f++){
+          let field=fields[f];
+          let patt = new RegExp(values[f],'i');
+          if(!patt.test(input[i][field])){ //if even one says no..
+            addit=false;//..it's a no!
+            break;
+          }
+        }
+        if(addit){
           out.push(input[i]);
         }
       }
