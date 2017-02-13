@@ -88,7 +88,7 @@ koodiApp.controller('koodiController', function($scope,$http)
   }
 
   $scope.toURIParam = function(data) {
-    console.debug("toURIParam")
+    //console.debug("toURIParam")
     if (!data) return "";
     var ret = Object.keys(data).map(function(k){
       if (!data[k]) {return "";}
@@ -190,3 +190,23 @@ koodiApp.controller('koodiController', function($scope,$http)
     });
   }
 });//-koodiController
+
+koodiApp.filter('regex', function() {
+  return function(input, regex) {
+    //console.debug(regex)
+    field=Object.keys(regex)[0]||'koodi'
+    regex=Object.values(regex)[0]
+    //console.log('regex '+field+' '+regex)
+    var patt = new RegExp(regex,'i');
+    var out = [];
+    for (var i = 0; i < input.length; i++){
+      //console.debug(input[i])
+      if(field){
+        if(patt.test(input[i][field])){
+          out.push(input[i]);
+        }
+      }
+    }
+    return out;
+  };
+});
