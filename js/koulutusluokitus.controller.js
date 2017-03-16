@@ -151,7 +151,7 @@ koodiApp.controller('koodiController', function($scope,$http)
   $scope.koodiOrderReverse = false;
 
   $scope.koodistokoodilkm = 0;
-  
+
   geturi = "/api/json/koulutusluokitus"
   if (location.hostname=='127.0.0.1' || location.hostname=='localhost') {
     geturi="/koulutusluokitus.json"
@@ -191,26 +191,28 @@ koodiApp.controller('koodiController', function($scope,$http)
   }
 });//-koodiController
 
+// NB! Not used for now as there is a problem with Safari...
 koodiApp.filter('regex', function() {
   return function(input, regex) {
     //console.debug(regex)
-    let fields = Object.keys(regex);
-    let values = Object.values(regex);
-    for(let v=0; v<Object.values(regex).length; v++){//take out empty rules
+    if(!regex) return input;
+    var fields = Object.keys(regex);
+    var values = Object.values(regex);
+    if(values)for(var v=0; v<values.length; v++){//take out empty rules
       if(!values[v]){
         fields.splice(v,1);
         values.splice(v,1);
       }
     }
-    let out = [];
+    var out = [];
     if(fields.length==0){//nothing to rule out..
       out=input;//..so all
     }else{
-      for(let i=0; i<input.length; i++){
-        let addit=true;//see if all patterns give ok
-        for(let f=0; f<fields.length; f++){
-          let field=fields[f];
-          let patt = new RegExp(values[f],'i');
+      for(var i=0; i<input.length; i++){
+        var addit=true;//see if all patterns give ok
+        for(var f=0; f<fields.length; f++){
+          var field=fields[f];
+          var patt = new RegExp(values[f],'i');
           if(!patt.test(input[i][field])){ //if even one says no..
             addit=false;//..it's a no!
             break;

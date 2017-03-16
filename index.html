@@ -146,7 +146,7 @@
       </thead>
       <tbody>
         <!-- UNIQUE/DISTINCT/GROUPBY TÄHÄN JOTENKIN -->
-        <tr data-ng-repeat="o in koodit | regex:search | orderBy:koodiOrder:koodiOrderReverse">
+        <tr data-ng-repeat="o in koodit | filter:search | orderBy:koodiOrder:koodiOrderReverse">
           <td data-ng-hide="clipcopy" class="rapida-light"><span class="rapida-xx-small">{{$index+1}}</span></td>
           <td data-ng-repeat="s in sarakkeet | filter:{nayta:1}">{{o[s.a]}}</td>
         </tr>
