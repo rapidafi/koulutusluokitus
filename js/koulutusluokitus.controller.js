@@ -154,7 +154,7 @@ koodiApp.controller('koodiController', function($scope,$http)
 
   geturi = "/api/json/koulutusluokitus"
   if (location.hostname=='127.0.0.1' || location.hostname=='localhost') {
-    geturi="/koulutusluokitus.json"
+    geturi="koulutusluokitus.json"
   }
   $http.get(geturi)
   .then(function (response){
@@ -194,33 +194,31 @@ koodiApp.controller('koodiController', function($scope,$http)
 // NB! Not used for now as there is a problem with Safari...
 koodiApp.filter('regex', function() {
   return function(input, regex) {
-    //console.debug(regex)
+    //console.debug(input)
     if(!regex) return input;
-    var fields = Object.keys(regex);
-    var values = Object.values(regex);
-    if(values)for(var v=0; v<values.length; v++){//take out empty rules
-      if(!values[v]){
-        fields.splice(v,1);
-        values.splice(v,1);
+    //console.debug(regex,Object.keys(regex).length,angular.equals({},regex))
+    // clear empty strings away
+    angular.forEach(regex,function(value,field){
+      if(value==""){
+        delete regex[field];
       }
+    });
+    if(angular.equals({},regex)){//nothing to rule out..
+      return input;//..so return all
     }
+    // else...
+    // start finding matches
     var out = [];
-    if(fields.length==0){//nothing to rule out..
-      out=input;//..so all
-    }else{
-      for(var i=0; i<input.length; i++){
-        var addit=true;//see if all patterns give ok
-        for(var f=0; f<fields.length; f++){
-          var field=fields[f];
-          var patt = new RegExp(values[f],'i');
-          if(!patt.test(input[i][field])){ //if even one says no..
-            addit=false;//..it's a no!
-            break;
-          }
+    for(var i=0; i<input.length; i++){
+      var addit=true;//see if all patterns give ok
+      angular.forEach(regex,function(value,field){
+        var patt = new RegExp(value,'i');
+        if(!patt.test(input[i][field])){ //if even one says no..
+          addit=false;//..it's a no!
         }
-        if(addit){
-          out.push(input[i]);
-        }
+      });
+      if(addit){
+        out.push(input[i]);
       }
     }
     return out;
