@@ -58,45 +58,45 @@
 <body>
   <div data-ng-app="koodiApp" data-ng-controller="koodiController" class="container-fluid">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="hidden-xs col-sm-12">
       <h4>Koulutus-koodisto ja koulutusluokitus Opintopolussa <span class="fa fa-spinner fa-spin" data-ng-show="koodistoLataa"></span></h4>
       <div class="row">
-        <div class="col-xs-2" data-ng-if="reallyshowkoodi">
+        <div class="hidden-xs col-sm-2" data-ng-if="reallyshowkoodi">
           <h5>Koulutuskoodi</h5>
           <span data-ng-repeat="s in sarakkeet | filter:{ ryhma:'perus' }" data-ng-click="useSarakkeet(s)">
             <button data-ng-if="s.nayta" class="btn btn-xs rapida-btn-primary">{{s.selite}}</button>
             <button data-ng-if="!s.nayta" class="btn btn-xs rapida-btn-default">{{s.selite}}</button>
           </span>
         </div>
-        <div class="col-xs-2">
+        <div class="hidden-xs col-sm-2">
           <h5>Opetushallinnon koulutusluokitus 1995</h5>
           <div data-ng-repeat="s in sarakkeet | filter:{ ryhma:'1995' }" data-ng-click="useSarakkeet(s)" data-ng-if="!s.koodi || (s.koodi && showkoodi)">
             <button data-ng-if="s.nayta" class="btn btn-xs rapida-btn-primary">{{s.selite}}</button>
             <button data-ng-if="!s.nayta" class="btn btn-xs rapida-btn-default">{{s.selite}}</button>
           </div>
         </div>
-        <div class="col-xs-2">
+        <div class="hidden-xs col-sm-2">
           <h5>Opetushallinnon koulutusluokitus 2002</h5>
           <div data-ng-repeat="s in sarakkeet | filter:{ ryhma:'2002' }" data-ng-click="useSarakkeet(s)" data-ng-if="!s.koodi || (s.koodi && showkoodi)">
             <button data-ng-if="s.nayta" class="btn btn-xs rapida-btn-primary">{{s.selite}}</button>
             <button data-ng-if="!s.nayta" class="btn btn-xs rapida-btn-default">{{s.selite}}</button>
           </div>
         </div>
-        <div class="col-xs-2">
+        <div class="hidden-xs col-sm-2">
           <h5>Kansallinen koulutusluokitus 2016</h5>
           <div data-ng-repeat="s in sarakkeet | filter:{ ryhma:'2016' }" data-ng-click="useSarakkeet(s)" data-ng-if="!s.koodi || (s.koodi && showkoodi)">
             <button data-ng-if="s.nayta" class="btn btn-xs rapida-btn-primary">{{s.selite}}</button>
             <button data-ng-if="!s.nayta" class="btn btn-xs rapida-btn-default">{{s.selite}}</button>
           </div>
         </div>
-        <div class="col-xs-2">
+        <div class="hidden-xs col-sm-2">
           <h5>Muut</h5>
           <div data-ng-repeat="s in sarakkeet | filter:{ ryhma:'muut' }" data-ng-click="useSarakkeet(s)" data-ng-if="!s.koodi || (s.koodi && showkoodi)">
             <button data-ng-if="s.nayta" class="btn btn-xs rapida-btn-primary">{{s.selite}}</button>
             <button data-ng-if="!s.nayta" class="btn btn-xs rapida-btn-default">{{s.selite}}</button>
           </div>
         </div>
-        <div class="col-xs-2">
+        <div class="hidden-xs col-sm-2">
           <label>Näytä koodit
             <input type="checkbox" ng-model="showkoodi">
           </label>
@@ -109,7 +109,7 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <div class="hidden-xs col-xs-1" id="copyon">
+      <div class="hidden-xs col-sm-1" id="copyon">
         <button class="clip rapida-clip" data-clipboard-target="#copyarea"
           data-popover-trigger="'mouseenter'" data-popover-placement="right" data-uib-popover="Kopioi taulukko leikepöydälle"
           data-popover-class="rapida-clip" data-tooltip-trigger="'focus'" data-tooltip-placement="top" data-uib-tooltip="Kopioitu!"
@@ -117,8 +117,8 @@
           <span class="glyphicon glyphicon-copy"></span>
         </button>
       </div>
-      <div class="col-xs-11">
-        <input type="text" id="copyuri" value="{{baseuri}}{{query||toURIParam(search)?'?':''}}{{query}}{{toURIParam(search)}}" class="col-xs-9 col-lg-8">
+      <div class="hidden-xs col-sm-11">
+        <input type="text" id="copyuri" value="{{baseuri}}{{query||toURIParam(search)?'?':''}}{{query}}{{toURIParam(search)}}" class="col-sm-9 col-lg-8">
         <button class="clip rapida-clip" data-clipboard-target="#copyuri"
           data-popover-trigger="'mouseenter'" data-popover-placement="right" data-uib-popover="Kopioi URI" data-popover-class="rapida-clip"
           data-tooltip-trigger="'focus'" data-tooltip-placement="top" data-uib-tooltip="Kopioitu!" data-tooltip-popup-close-delay="900">
@@ -130,7 +130,7 @@
       <table width="96%" class="table table-striped table-condensed" id="copyarea">
       <thead>
         <tr class="rapida-light">
-          <th data-ng-hide="clipcopy"><span style="font-size:xx-small;">#</span></th>
+          <th data-ng-hide="clipcopy" class="hidden-xs"><span style="font-size:xx-small;">#</span></th>
           <th data-ng-repeat="s in sarakkeet | filter:{nayta:1}" data-ng-click="$parent.koodiOrderReverse=!($parent.koodiOrder==s.a?$parent.koodiOrderReverse:true); $parent.koodiOrder=s.a">
           {{s.selite}}
           <span class="fa fa-sort-down" data-ng-if="$parent.koodiOrder==s.a && !($parent.koodiOrderReverse)"></span>
@@ -138,7 +138,7 @@
           </th>
         </tr>
         <tr class="rapida-light" data-ng-hide="clipcopy">
-          <td data-ng-hide="clipcopy"></td>
+          <td data-ng-hide="clipcopy" class="hidden-xs"></td>
           <td data-ng-repeat="s in sarakkeet | filter:{nayta:1}">
             <input type="text" class="form-control input-sm rapida-dim" data-ng-model="$parent.search[s.a]" data-ng-model-options="{debounce:600}">
           </td>
@@ -147,7 +147,7 @@
       <tbody>
         <!-- UNIQUE/DISTINCT/GROUPBY TÄHÄN JOTENKIN -->
         <tr data-ng-repeat="o in koodit | regex:search | orderBy:koodiOrder:koodiOrderReverse track by $index">
-          <td data-ng-hide="clipcopy" class="rapida-light"><span class="rapida-xx-small">{{$index+1}}</span></td>
+          <td data-ng-hide="clipcopy" class="hidden-xs rapida-light"><span class="rapida-xx-small">{{$index+1}}</span></td>
           <td data-ng-repeat="s in sarakkeet | filter:{nayta:1}">{{o[s.a]}}</td>
         </tr>
       </tbody>

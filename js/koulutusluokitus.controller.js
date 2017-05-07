@@ -1,5 +1,5 @@
 var koodiApp = angular.module('koodiApp', ['ngRoute', 'ui.select', 'ui.bootstrap']);
-koodiApp.controller('koodiController', function($scope,$http)
+koodiApp.controller('koodiController', function($scope,$http,$window)
 {
   //
   // PRIVAATIT FUNKTIOT
@@ -140,6 +140,16 @@ koodiApp.controller('koodiController', function($scope,$http)
     ,{"a":"okmohjauksenalakoodi","selite":"okmohjauksenala","nayta":0,"ryhma":"2016","koodi":1}
     ,{"a":"okmohjauksenalanimi","selite":"OKM ohjauksen ala","nayta":0,"ryhma":"2016","koodi":0}
   ];
+
+  // when bootstrap xs size hide some cols
+  //console.debug(window.innerWidth,$window.innerWidth)
+  if ($window.innerWidth<768) {
+    angular.forEach($scope.sarakkeet,function(s,k){
+      if(s.a=="koulutustyyppinimi" || s.a=="tutkintotyyppinimi"){
+        s.nayta=0;
+      }
+    });
+  }
 
   $scope.baseuri = location.origin+location.pathname;
   $scope.query = "";
