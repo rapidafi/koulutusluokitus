@@ -145,7 +145,7 @@ koodiApp.controller('koodiController', function($scope,$http,$window)
   //console.debug(window.innerWidth,$window.innerWidth)
   if ($window.innerWidth<768) {
     angular.forEach($scope.sarakkeet,function(s,k){
-      if(s.a=="koulutustyyppinimi" || s.a=="tutkintotyyppinimi"){
+      if(s.a!="koodi" && s.a!="nimi"){
         s.nayta=0;
       }
     });
