@@ -59,11 +59,24 @@
   <div data-ng-app="koodiApp" data-ng-controller="koodiController" class="container-fluid">
   <div class="row">
     <div class="hidden-xs col-sm-12">
-      <h4>Koulutus-koodisto ja koulutusluokitus Opintopolussa <span class="fa fa-spinner fa-spin" data-ng-show="koodistoLataa"></span></h4>
-      <p>
-      <a href="https://confluence.csc.fi/display/OPHPALV/Koodistopalvelu">Lähde</a>,
-      <a href="https://virkailija.opintopolku.fi/koodisto-service/swagger/index.html">tekninen lähde</a>
-      </p>
+      <div class="row">
+        <div class="col-xs-5">
+          <h4>Koulutus-koodisto ja koulutusluokitus Opintopolussa <span class="fa fa-spinner fa-spin" data-ng-show="koodistoLataa"></span></h4>
+          <p>
+            <a href="https://www.stat.fi/meta/luokitukset/koulutus/versio.html">Virallinen lähde</a>,
+            <a href="https://confluence.csc.fi/display/OPHPALV/Koodistopalvelu">tietojen lähde</a>,
+            <a href="https://virkailija.opintopolku.fi/koodisto-service/swagger/index.html">tekninen lähde</a>
+          </p>
+        </div>
+        <div class="col-xs-5 rapida-disclaimer">
+          <h5 data-ng-click="showdisclaimer=!showdisclaimer" class="text-center">DISCLAIMER</h5>
+          <div data-ng-show="showdisclaimer">
+            <p>Koulutusluokitus on virallisesti Tilastokeskuksen ylläpitämä luokitus.</p>
+            <p>Opetushallituksen Opintopolun koodistopalvelussa koulutusluokituksen avaimeen, koulutuskoodiin, on kytketty myös muita koodistoja, jotka eivät kuulu viralliseen koulutusluokitukseen.</p>
+            <p>Tämä sivusto vain näyttää Opintopolun koodistoja, niiden arvoja ja relaatioita keskenään. Sivusto EI ole Tilastokeskuksen tai Opetushallituksen ylläpitämä.</p>
+          </div>
+        </div>
+      </div>
       <div class="row">
         <div class="hidden-xs col-sm-2" data-ng-if="reallyshowkoodi">
           <h5>Koulutuskoodi</h5>
@@ -106,6 +119,12 @@
           </label>
           <label>Näytä avaintiedot
             <input type="checkbox" ng-model="reallyshowkoodi">
+          </label>
+          <label>Näytä tuplanollat
+            <input type="checkbox" ng-model="showdoublezero" data-ng-init="showdoublezero=true" data-ng-change="showdoublezero?search.koodi='':search.koodi='([1-9]0|0[1-9]|[1-9][1-9])$'">
+          </label>
+          <label>Näytä päättyneet/-vät
+            <input type="checkbox" ng-model="showended" data-ng-init="showended=true" data-ng-change="showended?search.loppupvm='':search.loppupvm='^[^0-9]'">
           </label>
         </div>
       </div>
@@ -162,8 +181,9 @@
     <div class="hidden-xs col-sm-4 text-left"></div>
     <div class="col-xs-12 col-sm-4 text-center">
       <p class="hidden-sm hidden-md hidden-lg">
-      <a href="https://confluence.csc.fi/display/OPHPALV/Koodistopalvelu">Lähde</a>,
-      <a href="https://virkailija.opintopolku.fi/koodisto-service/swagger/index.html">tekninen lähde</a>
+        <a href="https://www.stat.fi/meta/luokitukset/koulutus/versio.html">Virallinen lähde</a>,
+        <a href="https://confluence.csc.fi/display/OPHPALV/Koodistopalvelu">tietojen lähde</a>,
+        <a href="https://virkailija.opintopolku.fi/koodisto-service/swagger/index.html">tekninen lähde</a>
       </p>
       <span class="rapida-text-dim">&copy; 2018 <a href="https://rapida.fi">Rapida Oy</a></span>
     </div>

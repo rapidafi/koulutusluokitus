@@ -122,11 +122,11 @@ koodiApp.controller('koodiController', function($scope,$http,$window)
     ,{"a":"tutkintokoodi","selite":"tutk","nayta":0,"ryhma":"muut","koodi":1}
     ,{"a":"tutkintonimi","selite":"Tutkinto","nayta":0,"ryhma":"muut","koodi":0}
     ,{"a":"tutkintotyyppikoodi","selite":"tutktyyp","nayta":0,"ryhma":"muut","koodi":1}
-    ,{"a":"tutkintotyyppinimi","selite":"Tutkintotyyppi","nayta":1,"ryhma":"muut","koodi":0}
+    ,{"a":"tutkintotyyppinimi","selite":"Tutkintotyyppi","nayta":0,"ryhma":"muut","koodi":0}
     ,{"a":"koulutustyyppikoodi","selite":"koultyyp","nayta":0,"ryhma":"muut","koodi":1}
-    ,{"a":"koulutustyyppinimi","selite":"Koulutustyyppi","nayta":1,"ryhma":"muut","koodi":0}
+    ,{"a":"koulutustyyppinimi","selite":"Koulutustyyppi","nayta":0,"ryhma":"muut","koodi":0}
     ,{"a":"isced2011koulutusastekoodi","selite":"isced2011koulutusaste","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"isced2011koulutusastenimi","selite":"Koulutusaste","nayta":0,"ryhma":"2016","koodi":0}
+    ,{"a":"isced2011koulutusastenimi","selite":"Koulutusaste","nayta":1,"ryhma":"2016","koodi":0}
     ,{"a":"isced2011koulutusastetaso1koodi","selite":"isced2011koulutusastetaso1","nayta":0,"ryhma":"2016","koodi":1}
     ,{"a":"isced2011koulutusastetaso1nimi","selite":"Koulutusaste (taso1)","nayta":0,"ryhma":"2016","koodi":0}
     ,{"a":"isced2011koulutusastetaso2koodi","selite":"isced2011koulutusastetaso2","nayta":0,"ryhma":"2016","koodi":1}
@@ -138,7 +138,7 @@ koodiApp.controller('koodiController', function($scope,$http,$window)
     ,{"a":"isced2011koulutusalataso3koodi","selite":"isced2011koulutusalataso3","nayta":0,"ryhma":"2016","koodi":1}
     ,{"a":"isced2011koulutusalataso3nimi","selite":"Koulutusala (taso3)","nayta":0,"ryhma":"2016","koodi":0}
     ,{"a":"okmohjauksenalakoodi","selite":"okmohjauksenala","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"okmohjauksenalanimi","selite":"OKM ohjauksen ala","nayta":0,"ryhma":"2016","koodi":0}
+    ,{"a":"okmohjauksenalanimi","selite":"OKM ohjauksen ala","nayta":1,"ryhma":"2016","koodi":0}
   ];
 
   // when bootstrap xs size hide some cols

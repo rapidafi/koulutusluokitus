@@ -61,3 +61,9 @@ input {
   font-family: arial;
   color: #757575;
 }
+
+.rapida-disclaimer {
+  background-color: rgba(20,136,169,1);
+  color: rgba(202,202,202,1);
+  border: 2px dotted rgba(202,202,202,1);
+}
