@@ -16,7 +16,7 @@
     top: 0px;
     display: inline-block;
   }
-  #copyarea {
+  .copyhilite {
     -webkit-transition: all 0.30s ease-in-out;
     -moz-transition: all 0.30s ease-in-out;
     -ms-transition: all 0.30s ease-in-out;
@@ -24,7 +24,7 @@
     outline: none;
     border: 1px solid lightblue;
   }
-  #copyon:hover ~ #copyarea {
+  #copyon:hover ~ #copyarea > .copyhilite {
     border: 1px solid rgba(84,241,254,1);
     box-shadow:0 0 40px rgba(107,243,254,1);
   }
@@ -150,7 +150,7 @@
         <a href="{{baseuri}}{{query||toURIParam(search)?'?':''}}{{query}}{{toURIParam(search)}}"><span class="fa fa-external-link"></span></a>
       </div>
       <!-- ei uutta row:ta, tai edes col:ia jotta taulukko on sisaruksena kopiointipainikkeelle! uusi div tiputtaa uudeksi riviksi -->
-      <table width="96%" class="table table-striped table-condensed" id="copyarea">
+      <span id="copyarea"><table width="96%" class="table table-striped table-condensed copyhilite">
       <thead>
         <tr class="rapida-light">
           <th data-ng-hide="clipcopy" class="hidden-xs"><span style="font-size:xx-small;">#</span></th>
@@ -174,7 +174,7 @@
           <td data-ng-repeat="s in sarakkeet | filter:{nayta:1}">{{o[s.a]}}</td>
         </tr>
       </tbody>
-      </table>
+      </table></span>
     </div>
   </div>
   <div class="row">
