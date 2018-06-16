@@ -100,6 +100,13 @@
           </div>
         </div>
         <div class="hidden-xs col-sm-2">
+          <h5>ISCED 2011</h5>
+          <div data-ng-repeat="s in sarakkeet | filter:{ ryhma:'2011' }" data-ng-click="useSarakkeet(s)" data-ng-if="!s.koodi || (s.koodi && showkoodi)">
+            <button data-ng-if="s.nayta" class="btn btn-xs rapida-btn-primary">{{s.selite}}</button>
+            <button data-ng-if="!s.nayta" class="btn btn-xs rapida-btn-default">{{s.selite}}</button>
+          </div>
+        </div>
+        <div class="hidden-xs col-sm-2">
           <h5>Kansallinen koulutusluokitus 2016</h5>
           <div data-ng-repeat="s in sarakkeet | filter:{ ryhma:'2016' }" data-ng-click="useSarakkeet(s)" data-ng-if="!s.koodi || (s.koodi && showkoodi)">
             <button data-ng-if="s.nayta" class="btn btn-xs rapida-btn-primary">{{s.selite}}</button>

@@ -119,24 +119,38 @@ koodiApp.controller('koodiController', function($scope,$http,$window)
     ,{"a":"koulutusala1995nimi","selite":"Koulutusala 1995","nayta":0,"ryhma":"1995","koodi":0}
     ,{"a":"opintoala1995koodi","selite":"opm95opa","nayta":0,"ryhma":"1995","koodi":1}
     ,{"a":"opintoala1995nimi","selite":"Opintoala 1995","nayta":0,"ryhma":"1995","koodi":0}
+    ,{"a":"tutkintoonjohtavakoulutuskoodi","selite":"tutkjoht","nayta":0,"ryhma":"muut","koodi":1}
+    ,{"a":"tutkintoonjohtavakoulutusnimi","selite":"Tutkintoon johtava","nayta":0,"ryhma":"muut","koodi":0}
     ,{"a":"tutkintokoodi","selite":"tutk","nayta":0,"ryhma":"muut","koodi":1}
     ,{"a":"tutkintonimi","selite":"Tutkinto","nayta":0,"ryhma":"muut","koodi":0}
     ,{"a":"tutkintotyyppikoodi","selite":"tutktyyp","nayta":0,"ryhma":"muut","koodi":1}
     ,{"a":"tutkintotyyppinimi","selite":"Tutkintotyyppi","nayta":0,"ryhma":"muut","koodi":0}
     ,{"a":"koulutustyyppikoodi","selite":"koultyyp","nayta":0,"ryhma":"muut","koodi":1}
     ,{"a":"koulutustyyppinimi","selite":"Koulutustyyppi","nayta":0,"ryhma":"muut","koodi":0}
-    ,{"a":"isced2011koulutusastekoodi","selite":"isced2011koulutusaste","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"isced2011koulutusastenimi","selite":"Koulutusaste","nayta":1,"ryhma":"2016","koodi":0}
-    ,{"a":"isced2011koulutusastetaso1koodi","selite":"isced2011koulutusastetaso1","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"isced2011koulutusastetaso1nimi","selite":"Koulutusaste (taso1)","nayta":0,"ryhma":"2016","koodi":0}
-    ,{"a":"isced2011koulutusastetaso2koodi","selite":"isced2011koulutusastetaso2","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"isced2011koulutusastetaso2nimi","selite":"Koulutusaste (taso2)","nayta":0,"ryhma":"2016","koodi":0}
-    ,{"a":"isced2011koulutusalataso1koodi","selite":"isced2011koulutusalataso1","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"isced2011koulutusalataso1nimi","selite":"Koulutusala (taso1)","nayta":0,"ryhma":"2016","koodi":0}
-    ,{"a":"isced2011koulutusalataso2koodi","selite":"isced2011koulutusalataso2","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"isced2011koulutusalataso2nimi","selite":"Koulutusala (taso2)","nayta":0,"ryhma":"2016","koodi":0}
-    ,{"a":"isced2011koulutusalataso3koodi","selite":"isced2011koulutusalataso3","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"isced2011koulutusalataso3nimi","selite":"Koulutusala (taso3)","nayta":0,"ryhma":"2016","koodi":0}
+    ,{"a":"tutkintonimikekkkoodi","selite":"tutknimikekk","nayta":0,"ryhma":"muut","koodi":1}
+    ,{"a":"tutkintonimikekknimi","selite":"Tutkintonimike kk","nayta":0,"ryhma":"muut","koodi":0}
+    ,{"a":"isced2011koulutusastekoodi","selite":"isced2011koulutusaste","nayta":0,"ryhma":"2011","koodi":1}
+    ,{"a":"isced2011koulutusastenimi","selite":"Level","nayta":0,"ryhma":"2011","koodi":0}
+    ,{"a":"isced2011koulutusastetaso1koodi","selite":"isced2011koulutusastetaso1","nayta":0,"ryhma":"2011","koodi":1}
+    ,{"a":"isced2011koulutusastetaso1nimi","selite":"Koulutusaste (taso1)","nayta":0,"ryhma":"2011","koodi":0}
+    ,{"a":"isced2011koulutusastetaso2koodi","selite":"isced2011koulutusastetaso2","nayta":0,"ryhma":"2011","koodi":1}
+    ,{"a":"isced2011koulutusastetaso2nimi","selite":"Koulutusaste (taso2)","nayta":0,"ryhma":"2011","koodi":0}
+    ,{"a":"isced2011koulutusalataso1koodi","selite":"isced2011koulutusalataso1","nayta":0,"ryhma":"2011","koodi":1}
+    ,{"a":"isced2011koulutusalataso1nimi","selite":"Koulutusala (taso1), Broad field","nayta":0,"ryhma":"2011","koodi":0}
+    ,{"a":"isced2011koulutusalataso2koodi","selite":"isced2011koulutusalataso2","nayta":0,"ryhma":"2011","koodi":1}
+    ,{"a":"isced2011koulutusalataso2nimi","selite":"Koulutusala (taso2), Narrow field","nayta":0,"ryhma":"2011","koodi":0}
+    ,{"a":"isced2011koulutusalataso3koodi","selite":"isced2011koulutusalataso3","nayta":0,"ryhma":"2011","koodi":1}
+    ,{"a":"isced2011koulutusalataso3nimi","selite":"Koulutusala (taso3), Detailed field","nayta":0,"ryhma":"2011","koodi":0}
+    ,{"a":"kansallinenkoulutusluokitus2016koulutusastetaso1koodi","selite":"kansallinenkoulutusluokitus2016koulutusastetaso1","nayta":0,"ryhma":"2016","koodi":1}
+    ,{"a":"kansallinenkoulutusluokitus2016koulutusastetaso1nimi","selite":"Koulutusaste, taso1","nayta":1,"ryhma":"2016","koodi":0}
+    ,{"a":"kansallinenkoulutusluokitus2016koulutusastetaso2koodi","selite":"kansallinenkoulutusluokitus2016koulutusastetaso2","nayta":0,"ryhma":"2016","koodi":1}
+    ,{"a":"kansallinenkoulutusluokitus2016koulutusastetaso2nimi","selite":"Koulutusaste, taso2","nayta":0,"ryhma":"2016","koodi":0}
+    ,{"a":"kansallinenkoulutusluokitus2016koulutusalataso1koodi","selite":"kansallinenkoulutusluokitus2016koulutusalataso1","nayta":0,"ryhma":"2016","koodi":1}
+    ,{"a":"kansallinenkoulutusluokitus2016koulutusalataso1nimi","selite":"Koulutusala, taso1","nayta":0,"ryhma":"2016","koodi":0}
+    ,{"a":"kansallinenkoulutusluokitus2016koulutusalataso2koodi","selite":"kansallinenkoulutusluokitus2016koulutusalataso2","nayta":0,"ryhma":"2016","koodi":1}
+    ,{"a":"kansallinenkoulutusluokitus2016koulutusalataso2nimi","selite":"Koulutusala, taso2","nayta":0,"ryhma":"2016","koodi":0}
+    ,{"a":"kansallinenkoulutusluokitus2016koulutusalataso3koodi","selite":"kansallinenkoulutusluokitus2016koulutusalataso3","nayta":0,"ryhma":"2016","koodi":1}
+    ,{"a":"kansallinenkoulutusluokitus2016koulutusalataso3nimi","selite":"Koulutusala, taso3","nayta":0,"ryhma":"2016","koodi":0}
     ,{"a":"okmohjauksenalakoodi","selite":"okmohjauksenala","nayta":0,"ryhma":"2016","koodi":1}
     ,{"a":"okmohjauksenalanimi","selite":"OKM ohjauksen ala","nayta":1,"ryhma":"2016","koodi":0}
   ];
