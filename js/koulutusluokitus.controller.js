@@ -107,18 +107,18 @@ koodiApp.controller('koodiController', function($scope,$http,$window)
     ,{"a":"nimi","selite":"Nimi","nayta":1,"ryhma":"perus","koodi":0}
     ,{"a":"alkupvm","selite":"Alkupvm","nayta":0,"ryhma":"muut","koodi":0}
     ,{"a":"loppupvm","selite":"Loppupvm","nayta":0,"ryhma":"muut","koodi":0}
-    ,{"a":"koulutusaste2002koodi","selite":"opmast","nayta":0,"ryhma":"2002","koodi":1}
-    ,{"a":"koulutusaste2002nimi","selite":"Koulutusaste 2002","nayta":0,"ryhma":"2002","koodi":0}
-    ,{"a":"koulutusala2002koodi","selite":"opmala","nayta":0,"ryhma":"2002","koodi":1}
-    ,{"a":"koulutusala2002nimi","selite":"Koulutusala 2002","nayta":0,"ryhma":"2002","koodi":0}
-    ,{"a":"opintoala2002koodi","selite":"opmopa","nayta":0,"ryhma":"2002","koodi":1}
-    ,{"a":"opintoala2002nimi","selite":"Opintoala 2002","nayta":0,"ryhma":"2002","koodi":0}
-    ,{"a":"koulutusaste1995koodi","selite":"opm95ast","nayta":0,"ryhma":"1995","koodi":1}
-    ,{"a":"koulutusaste1995nimi","selite":"Koulutusaste 1995","nayta":0,"ryhma":"1995","koodi":0}
-    ,{"a":"koulutusala1995koodi","selite":"opm95ala","nayta":0,"ryhma":"1995","koodi":1}
-    ,{"a":"koulutusala1995nimi","selite":"Koulutusala 1995","nayta":0,"ryhma":"1995","koodi":0}
-    ,{"a":"opintoala1995koodi","selite":"opm95opa","nayta":0,"ryhma":"1995","koodi":1}
-    ,{"a":"opintoala1995nimi","selite":"Opintoala 1995","nayta":0,"ryhma":"1995","koodi":0}
+    ,{"a":"koulutusaste2002koodi","selite":"opmast","nayta":0,"ryhma":"vanha","koodi":1}
+    ,{"a":"koulutusaste2002nimi","selite":"Koulutusaste 2002","nayta":0,"ryhma":"vanha","koodi":0}
+    ,{"a":"koulutusala2002koodi","selite":"opmala","nayta":0,"ryhma":"vanha","koodi":1}
+    ,{"a":"koulutusala2002nimi","selite":"Koulutusala 2002","nayta":0,"ryhma":"vanha","koodi":0}
+    ,{"a":"opintoala2002koodi","selite":"opmopa","nayta":0,"ryhma":"vanha","koodi":1}
+    ,{"a":"opintoala2002nimi","selite":"Opintoala 2002","nayta":0,"ryhma":"vanha","koodi":0}
+    ,{"a":"koulutusaste1995koodi","selite":"opm95ast","nayta":0,"ryhma":"vanha","koodi":1}
+    ,{"a":"koulutusaste1995nimi","selite":"Koulutusaste 1995","nayta":0,"ryhma":"vanha","koodi":0}
+    ,{"a":"koulutusala1995koodi","selite":"opm95ala","nayta":0,"ryhma":"vanha","koodi":1}
+    ,{"a":"koulutusala1995nimi","selite":"Koulutusala 1995","nayta":0,"ryhma":"vanha","koodi":0}
+    ,{"a":"opintoala1995koodi","selite":"opm95opa","nayta":0,"ryhma":"vanha","koodi":1}
+    ,{"a":"opintoala1995nimi","selite":"Opintoala 1995","nayta":0,"ryhma":"vanha","koodi":0}
     ,{"a":"tutkintoonjohtavakoulutuskoodi","selite":"tutkjoht","nayta":0,"ryhma":"muut","koodi":1}
     ,{"a":"tutkintoonjohtavakoulutusnimi","selite":"Tutkintoon johtava","nayta":0,"ryhma":"muut","koodi":0}
     ,{"a":"tutkintokoodi","selite":"tutk","nayta":0,"ryhma":"muut","koodi":1}
@@ -142,9 +142,9 @@ koodiApp.controller('koodiController', function($scope,$http,$window)
     ,{"a":"isced2011koulutusalataso3koodi","selite":"isced2011koulutusalataso3","nayta":0,"ryhma":"2011","koodi":1}
     ,{"a":"isced2011koulutusalataso3nimi","selite":"Koulutusala (taso3), Detailed field","nayta":0,"ryhma":"2011","koodi":0}
     ,{"a":"kansallinenkoulutusluokitus2016koulutusastetaso1koodi","selite":"kansallinenkoulutusluokitus2016koulutusastetaso1","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"kansallinenkoulutusluokitus2016koulutusastetaso1nimi","selite":"Koulutusaste, taso1","nayta":1,"ryhma":"2016","koodi":0}
+    ,{"a":"kansallinenkoulutusluokitus2016koulutusastetaso1nimi","selite":"Koulutusaste, taso1","nayta":0,"ryhma":"2016","koodi":0}
     ,{"a":"kansallinenkoulutusluokitus2016koulutusastetaso2koodi","selite":"kansallinenkoulutusluokitus2016koulutusastetaso2","nayta":0,"ryhma":"2016","koodi":1}
-    ,{"a":"kansallinenkoulutusluokitus2016koulutusastetaso2nimi","selite":"Koulutusaste, taso2","nayta":0,"ryhma":"2016","koodi":0}
+    ,{"a":"kansallinenkoulutusluokitus2016koulutusastetaso2nimi","selite":"Koulutusaste, taso2","nayta":1,"ryhma":"2016","koodi":0}
     ,{"a":"kansallinenkoulutusluokitus2016koulutusalataso1koodi","selite":"kansallinenkoulutusluokitus2016koulutusalataso1","nayta":0,"ryhma":"2016","koodi":1}
     ,{"a":"kansallinenkoulutusluokitus2016koulutusalataso1nimi","selite":"Koulutusala, taso1","nayta":0,"ryhma":"2016","koodi":0}
     ,{"a":"kansallinenkoulutusluokitus2016koulutusalataso2koodi","selite":"kansallinenkoulutusluokitus2016koulutusalataso2","nayta":0,"ryhma":"2016","koodi":1}

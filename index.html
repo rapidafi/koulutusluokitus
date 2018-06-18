@@ -86,15 +86,8 @@
           </span>
         </div>
         <div class="hidden-xs col-sm-2">
-          <h5>Opetushallinnon koulutusluokitus 1995</h5>
-          <div data-ng-repeat="s in sarakkeet | filter:{ ryhma:'1995' }" data-ng-click="useSarakkeet(s)" data-ng-if="!s.koodi || (s.koodi && showkoodi)">
-            <button data-ng-if="s.nayta" class="btn btn-xs rapida-btn-primary">{{s.selite}}</button>
-            <button data-ng-if="!s.nayta" class="btn btn-xs rapida-btn-default">{{s.selite}}</button>
-          </div>
-        </div>
-        <div class="hidden-xs col-sm-2">
-          <h5>Opetushallinnon koulutusluokitus 2002</h5>
-          <div data-ng-repeat="s in sarakkeet | filter:{ ryhma:'2002' }" data-ng-click="useSarakkeet(s)" data-ng-if="!s.koodi || (s.koodi && showkoodi)">
+          <h5>Opetushallinnon koulutusluokitus 1995 ja 2002</h5>
+          <div data-ng-repeat="s in sarakkeet | filter:{ ryhma:'vanha' }" data-ng-click="useSarakkeet(s)" data-ng-if="!s.koodi || (s.koodi && showkoodi)">
             <button data-ng-if="s.nayta" class="btn btn-xs rapida-btn-primary">{{s.selite}}</button>
             <button data-ng-if="!s.nayta" class="btn btn-xs rapida-btn-default">{{s.selite}}</button>
           </div>
@@ -121,17 +114,23 @@
           </div>
         </div>
         <div class="hidden-xs col-sm-2">
-          <label>Näytä koodit
+          <label title="Tuo esiin koodiarvo-kenttien valinta">Näytä koodit
             <input type="checkbox" ng-model="showkoodi">
           </label>
-          <label>Näytä avaintiedot
+          <label title="Tuo esiin koodi- ja nimi-kenttien valinta (käytä maltillisesti)">Näytä avaintiedot
             <input type="checkbox" ng-model="reallyshowkoodi">
           </label>
-          <label>Näytä tuplanollat
+          <label title="Lisää ehto '([1-9]0|0[1-9]|[1-9][1-9])$' koodi-kenttään">Näytä tuplanollat
             <input type="checkbox" ng-model="showdoublezero" data-ng-init="showdoublezero=true" data-ng-change="showdoublezero?search.koodi='':search.koodi='([1-9]0|0[1-9]|[1-9][1-9])$'">
           </label>
-          <label>Näytä päättyneet/-vät
+          <label title="Lisää ehto '^[^0-9]' loppupvm-kenttään">Näytä päättyneet/-vät
             <input type="checkbox" ng-model="showended" data-ng-init="showended=true" data-ng-change="showended?search.loppupvm='':search.loppupvm='^[^0-9]'">
+          </label>
+          <label title="Lisää ehto '61|62|91' kansallinenkoulutusluokitus2016koulutusastetaso2koodi-kenttään">Näytä vain ammattikorkeakoulujen arvot
+            <input type="checkbox" ng-model="showuascodesonly" data-ng-init="showuascodesonly=false" data-ng-change="showuascodesonly?search.kansallinenkoulutusluokitus2016koulutusastetaso2koodi='61|62|91':search.kansallinenkoulutusluokitus2016koulutusastetaso2koodi=''">
+          </label>
+          <label title="Lisää ehto '63|72|73|81|82|91' kansallinenkoulutusluokitus2016koulutusastetaso2koodi-kenttään">Näytä vain yliopistojen arvot
+            <input type="checkbox" ng-model="showuniversitycodesonly" data-ng-init="showuniversitycodesonly=false" data-ng-change="showuniversitycodesonly?search.kansallinenkoulutusluokitus2016koulutusastetaso2koodi='63|72|73|81|82|91':search.kansallinenkoulutusluokitus2016koulutusastetaso2koodi=''">
           </label>
         </div>
       </div>
