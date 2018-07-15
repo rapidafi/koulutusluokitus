@@ -6,6 +6,7 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
 
   grunt.loadNpmTasks('grunt-google-fonts');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   var srcDir = 'src';
   var distDir = 'dist';
@@ -120,7 +121,16 @@ module.exports = function (grunt) {
           ]
         }
       }
-    }
+    },
+    watch: {
+      scripts: {
+        files: ['**/*.js','**/*.css','**/*.html'],
+        tasks: ['copy'],
+        options: {
+          spawn: false,
+        },
+      },
+    },
   });
 
   grunt.registerTask('default', [
