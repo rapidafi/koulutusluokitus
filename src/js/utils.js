@@ -1,11 +1,3 @@
-var clipboard = new Clipboard('.clip');
-clipboard.on('success', function(e) {
-  e.clearSelection();
-});
-clipboard.on('error', function(e) {
-  console.log(e);
-});
-
 // Credits: http://stackoverflow.com/a/7075589
 function findItem(arr, propName, propValue) {
   //console.debug("findItem "+propName+" "+propValue)
