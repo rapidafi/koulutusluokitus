@@ -39,62 +39,58 @@ module.exports = function (grunt) {
       ]
     },
     copy: {
-      main: {
-        files: [
-          //html:
-          {
-            expand: true,
-            cwd: srcDir,
-            src: [
-              './*.html'
-            ],
-            dest: distDir,
-            options : {
-              noProcess: '**/*.{png,gif,jpg,ico,svg,eot,ttf,woff,woff2}',
-              process: function (content) {
-                return content.replace(/<!-- dev -->.*<!-- enddev -->/g, '')
-                  .replace(/<!-- mustache /g, '')
-                  .replace(/ end mustache -->/g, '');
-              }
-            }
-          },
-          //js:
-          {
-            expand: true,
-            cwd: srcDir,
-            src: [
-              'js/*.js'
-            ],
-            dest: distDir
-          },
-          //css:
-          {
-            expand: true,
-            cwd: srcDir,
-            src: [
-              'css/*.css'
-            ],
-            dest: distDir
-          },
-          //bootstrapfonts:
-          {
-            expand: true,
-            cwd: 'node_modules/bootstrap-css-only',
-            src: [
-              './fonts/**'
-            ],
-            dest: distDir+'/'
-          },
-          //fontawesomefonts:
-          {
-            expand: true,
-            cwd: 'node_modules/font-awesome',
-            src: [
-              './fonts/**'
-            ],
-            dest: distDir+'/'
+      html:
+      {
+        expand: true,
+        cwd: srcDir,
+        src: [
+          './*.html'
+        ],
+        dest: distDir,
+        options : {
+          noProcess: '**/*.{png,gif,jpg,ico,svg,eot,ttf,woff,woff2}',
+          process: function (content) {
+            return content.replace(/<!-- dev -->.*<!-- enddev -->/g, '')
+              .replace(/<!-- mustache /g, '')
+              .replace(/ end mustache -->/g, '');
           }
-        ]
+        }
+      },
+      js:
+      {
+        expand: true,
+        cwd: srcDir,
+        src: [
+          'js/*.js'
+        ],
+        dest: distDir
+      },
+      css:
+      {
+        expand: true,
+        cwd: srcDir,
+        src: [
+          'css/*.css'
+        ],
+        dest: distDir
+      },
+      bootstrapfonts:
+      {
+        expand: true,
+        cwd: 'node_modules/bootstrap-css-only',
+        src: [
+          './fonts/**'
+        ],
+        dest: distDir+'/'
+      },
+      fontawesomefonts:
+      {
+        expand: true,
+        cwd: 'node_modules/font-awesome',
+        src: [
+          './fonts/**'
+        ],
+        dest: distDir+'/'
       },
       develop: {
         expand: true,
@@ -143,7 +139,11 @@ module.exports = function (grunt) {
     'concat',
     'uglify',
     'cssmin',
-    'copy:main',
+    'copy:html',
+    'copy:js',
+    'copy:css',
+    'copy:bootstrapfonts',
+    'copy:fontawesomefonts',
     'googlefonts',
     'usemin'
   ]);
